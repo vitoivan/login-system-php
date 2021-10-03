@@ -32,3 +32,10 @@
 .home h1 > .username {
     color : red;
 }
+
+.error {
+    color: red;
+    font-size: .8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}

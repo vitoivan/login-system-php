@@ -14,7 +14,7 @@ class User
             || empty($_POST['pwd'])
         )
         {
-            throw new \Exception("Alguns campos estão em falta");
+            throw new \Exception("Todos os campos precisam estar preenchidos");
         }
         else
         {  
@@ -57,7 +57,7 @@ class User
     public function login($email, $pwd)
     {
         if (!$email or !$pwd) {
-            throw new \Exception("Alguns campos estão em falta");
+            throw new \Exception("Todos os campos precisam estar preenchidos");
         }
         $email = addslashes($email);
         $pwd = addslashes($pwd);

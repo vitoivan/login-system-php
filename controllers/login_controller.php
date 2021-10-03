@@ -9,6 +9,8 @@ if (isset($_POST['submit']))
        $isLogged = $usr->login($_POST['email'], md5($_POST['pwd']));
        if ($isLogged === true && isset($_SESSION['user_id']))
         {
+            unset($_SESSION['login-error']);
+            unset($_SESSION['register-error']);
             header('location: ../index.php');
         }
         else {
@@ -16,7 +18,7 @@ if (isset($_POST['submit']))
        }
     }
     catch (Exception $e) {
-        echo $e->getMessage();
-        die();
+        $_SESSION['login-error'] = $e->getMessage();
+        header('location: ../login.php');
     }
 }
