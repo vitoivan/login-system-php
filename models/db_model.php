@@ -9,7 +9,6 @@ class Database
         $dbPWD  = $cleardb_url['pass'];
         $dbName = substr($cleardb_url["path"],1);
 
-        
         $str = 'mysql:host='.$serverName.';dbname='.$dbName;
         try{
             $conn = new PDO ($str, $dbUserName, $dbPWD);
