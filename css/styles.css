@@ -28,3 +28,7 @@
     margin-left: auto;
     margin-top: 1rem;
 }
+
+.home h1 > .username {
+    color : red;
+}

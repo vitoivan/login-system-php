@@ -73,10 +73,14 @@ class User
 
         if ($query->rowCount() > 0)
         {
-            return $query->fetch(\PDO::FETCH_ASSOC);
+            $data = $query->fetch();
+            $_SESSION['user_name'] = $data['name'];
+            $_SESSION['user_id'] = $data['id'];
+            $_SESSION['user_email'] = $data['email'];
+            return true;
         }
         else {
-            throw new \Exception("Usuário não encontrado!");
+            return false;
         }
     }
 }
